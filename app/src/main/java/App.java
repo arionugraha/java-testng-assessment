@@ -32,8 +32,6 @@ public class App {
             System.out.println("Result: " + app.calculateNumbers(a, b, c, d));
         } catch (IllegalArgumentException e) {
             System.out.println("An error occurred: " + e.getMessage());
-        } catch (InputMismatchException e) {
-            System.out.println("Please enter real numbers.");
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
         }
