@@ -15,16 +15,16 @@ public class App {
             var scanner = new Scanner(System.in);
     
             System.out.println("Enter a:");
-            double a = scanner.nextDouble();
+            double a = readInput(scanner, 'a');
     
             System.out.println("Enter b:");
-            double b = scanner.nextDouble();
+            double b = readInput(scanner, 'b');
     
             System.out.println("Enter c:");
-            double c = scanner.nextDouble();
+            double c = readInput(scanner, 'c');
     
             System.out.println("Enter d:");
-            double d = scanner.nextDouble();
+            double d = readInput(scanner, 'd');
     
             scanner.close();
 
@@ -36,6 +36,18 @@ public class App {
             System.out.println("Please enter real numbers.");
         } catch (Exception e) {
             System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+
+    private static double readInput(Scanner scanner, char type) {
+        while (true) {
+            try {
+                return scanner.nextDouble();
+            } catch (InputMismatchException e) {
+                scanner.nextLine();
+                System.out.println("Please enter a real number.");
+                System.out.println("Enter " + type + ":");
+            }
         }
     }
 }

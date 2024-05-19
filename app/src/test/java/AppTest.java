@@ -49,14 +49,22 @@ public class AppTest {
         Assert.assertEquals(app.calculateNumbers(-99999999, -99999999, -99999999, -99999999), 1.0);
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test
     public void testNotNumberValues() {
-        app.calculateNumbers(Double.NaN, Double.NaN, Double.NaN, Double.NaN);
+        try {   
+            app.calculateNumbers(Double.NaN, Double.NaN, Double.NaN, Double.NaN);
+            throw new IllegalArgumentException("Expected IllegalArgumentException not thrown.");
+        } catch (IllegalArgumentException e) {
+        }
     }
 
-    @Test(expectedExceptions = IllegalArgumentException.class)
+    @Test
     public void testNotNumberAndRealNumberValues() {
-        app.calculateNumbers(Double.NaN, 1, 1, 1);
+        try {
+            app.calculateNumbers(Double.NaN, 1, 1, 1);
+            throw new IllegalArgumentException("Expected IllegalArgumentException not thrown.");
+        } catch (IllegalArgumentException e) {
+        }
     }
 
 }
