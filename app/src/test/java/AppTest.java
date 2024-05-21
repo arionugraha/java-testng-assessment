@@ -93,4 +93,9 @@ public class AppTest {
     public void testInfiniteAndRealNumberValues() {
         app.calculateNumbers(Double.POSITIVE_INFINITY, 1, Double.POSITIVE_INFINITY, 1);
     }
+
+    @Test()
+    public void testArbitraryValues() {
+        Assert.assertEquals(app.calculateNumbers(5.8, 3.6, 1, 0), 9.4);
+    }
 }
